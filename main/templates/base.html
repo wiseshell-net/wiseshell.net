@@ -28,24 +28,24 @@
         <!-- HEADER END-->
         <!-- TOP NAVIGATION BEGIN-->
         <!-- startskip -->
-        
+
         <!-- Dillo 3.0.5 does not support margin or paddings in non-containers. -->
         <!-- So, we have to put &nbsp; on it. -->
         <div id="navigation_menu" class="navigation">
-            <div class="blue_links">
+            <div class="white_links">
                 {% block menu %}
-                <a href="/home/">Home</a>&nbsp;&nbsp;&nbsp;
-                <a href="/blog/">Blog</a>&nbsp;&nbsp;&nbsp;
-                <a href="/download/">Download</a>&nbsp;&nbsp;&nbsp;
-                <a href="/faq/">FAQ</a>&nbsp;&nbsp;&nbsp;
-                <a href="/wiki/">Wiki</a>&nbsp;&nbsp;&nbsp;
-                <a href="/source/">Source</a>&nbsp;&nbsp;&nbsp;
-                <a href="/donate/">Donate</a>&nbsp;&nbsp;&nbsp;
+                {% block active_home %}<a href="/home/">Home</a>{% endblock active_home %}&nbsp;&nbsp;&nbsp;
+                {% block active_blog %}<a href="/blog/">Blog</a>{% endblock active_blog %}&nbsp;&nbsp;&nbsp;
+                {% block active_download %}<a href="/download/">Download</a>{% endblock active_download %}&nbsp;&nbsp;&nbsp;
+                {% block active_faq %}<a href="/faq/">FAQ</a>{% endblock active_faq %}&nbsp;&nbsp;&nbsp;
+                {% block active_wiki %}<a href="/wiki/">Wiki</a>{% endblock active_wiki %}&nbsp;&nbsp;&nbsp;
+                {% block active_source %}<a href="/source/">Source</a>{% endblock active_source %}&nbsp;&nbsp;&nbsp;
+                {% block active_donate %}<a href="/donate/">Donate</a>{% endblock active_donate %}<img style="border:0;background:none;width:16px;height:16px;" src="{% static 'assets/img/heart.gif' %}" width="16" height="16" />&nbsp;&nbsp;&nbsp;
                 {% endblock menu %}
             </div>
         </div>
         <div id="navigation_lang" class="navigation">
-            <div class="blue_links">
+            <div class="red_links">
                 {% block languages %}
                     <a href="https://anybrowser.org/campaign/abdesign.html">Català</a>&nbsp;&nbsp;&nbsp;
                     <a href="https://anybrowser.org/campaign/abdesign.html">Deutsch</a>&nbsp;&nbsp;&nbsp;
@@ -62,7 +62,7 @@
                 Content body
                 {% endblock content_body %}
                 <!-- end contents -->
-                <div class="blue_links center">
+                <div class="red_links center">
                     {% block badges %}
                     <a href="https://anybrowser.org/campaign/index.html"><img style="border:0;width:96px;height:32px;" src="{% static 'assets/img/button_enhanced.gif' %}" alt="Content Enhanced - Use Any Browser" class="banner_marg" width="96" height="32"></a>
                     <a href="http://www.opencontent.org/"><img style="border:0;width:85px;height:33px;" src="{% static 'assets/img/button_takeone.gif' %}" alt="Open Content" class="banner_marg" width="85" height="33"></a>
@@ -77,7 +77,7 @@
         </div>
         <!-- FOOTER BEGIN-->
         <div id="navigation_footer" class="navigation">
-            <div class="blue_links center">
+            <div class="red_links center">
                 {% block footer %}
                 <a href="#top">Top</a> {% endblock footer %}
             </div>

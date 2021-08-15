@@ -1,1 +1,7 @@
 {% extends 'base.html' %}
+{% load static %}{% load l10n %}
+{% block active_donate %}<a class="active" href="/donate/">Donate</a>{% endblock active_donate %}
+{% block content_title %}Donate{% endblock content_title %}
+{% block content_body %}
+<p>Thanks for considering a donation!</p>
+{% endblock content_body %}

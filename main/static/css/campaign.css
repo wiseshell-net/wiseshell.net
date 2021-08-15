@@ -316,7 +316,8 @@ a.big_red:hover {
 }
 
 #navigation_menu {
-    border-top: 5px solid #C25025;
+    border-top: 5px solid #eeeeee;
+    background: #950d32;
     color: #818181;
 }
 
@@ -335,13 +336,27 @@ or follow the color palette of the web page.
 
 */
 
-.blue_links a {
+.white_links a {
+    color: #ffffff;
+    text-decoration: underline;
+    font: bold 16px/20px 'Tahoma', sans-serif;
+}
+
+.white_links a.active {
+    color: #deb2bd;
+}
+
+.white_links a:hover {
+    color: #deb2bd;
+}
+
+.red_links a {
     color: #a60f38;
     text-decoration: underline;
     font: bold 16px/20px 'Tahoma', sans-serif;
 }
 
-.blue_links img {
+.red_links img {
     vertical-align: middle;
     background: #fff;
     padding: 3px;
