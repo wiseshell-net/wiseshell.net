@@ -1,0 +1,361 @@
+/*---------------*/
+
+
+/*-FOR ALL BEGIN-*/
+
+
+/*---------------*/
+
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+    font: 100% 'Tahoma', sans-serif;
+    color: #4B4B4B;
+}
+
+body {
+    background: #f8f8f8;
+}
+
+img {
+    border: none;
+    background: none;
+    margin: 0;
+}
+
+strong {
+    font-weight: bold;
+}
+
+p {
+    padding: 7px 0px;
+}
+
+h1,
+h2 {
+    color: #a60f38;
+    font: bold 30px/35px 'Arial', sans-serif;
+    border-bottom: 1px solid #d3d3d3;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 6px;
+}
+
+h2 {
+    font: bold 100% 'Arial', sans-serif;
+}
+
+h3 {
+    color: #333;
+    font: bold 100% 'Arial', sans-serif;
+    padding: 6px 3px 1px 3px;
+    position: relative;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    font-weight: bold;
+    text-align: left;
+    vertical-align: top;
+    padding: 4px 0px;
+}
+
+ul {
+    padding-left: 40px;
+    padding-bottom: 10px;
+}
+
+ol {
+    padding-left: 40px;
+    padding-bottom: 10px;
+}
+
+dd {
+    padding-left: 40px;
+}
+
+a:link {
+    color: #1C71AA;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #527931;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #37A2E9;
+    text-decoration: underline;
+}
+
+.clear_width {
+    /*	width:770px; */
+    clear: both;
+}
+
+.table-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.small-padding {
+    padding: 5px;
+}
+
+.padding {
+    padding: 10px;
+}
+
+.padding_double {
+    padding: 30px;
+}
+
+.padding_vert {
+    padding: 10px 0px;
+}
+
+.dark_red {
+    color: #C25025;
+}
+
+a.big_red {
+    color: #C25025;
+    padding: 0px 0 0px 6px;
+    font: bold 100% 'Arial', sans-serif;
+}
+
+a.big_red:hover {
+    color: #ee2055;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.quot {
+    border: 1px dashed #E2DEB1;
+    background: #FFFBD2;
+    margin: 10px 20px;
+    padding: 15px;
+    font: 100% 'Trebuchet', 'Times New Roman', sans-serif;
+}
+
+.code {
+    border: 1px dashed #E2E2DC;
+    background: #F0F0F0;
+    margin: 10px 20px;
+    padding: 15px;
+    font: 100% 'Times New Roman', 'Courier', monospace;
+}
+
+.grey {
+    background: #eee;
+    border: 1px dashed #D3D3D3;
+}
+
+.last_modify {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #999;
+    background: none;
+    font: 100% 'Tahoma', sans-serif;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+
+/*-------------*/
+
+
+/*-FOR ALL END-*/
+
+
+/*-------------*/
+
+#global {
+    width: 100%;
+}
+
+#header {
+    height: 128px;
+    width: 100%;
+    background: #a60f38;
+    position: relative;
+}
+
+#header img {
+    display: block;
+}
+
+#header_left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 14px;
+    height: 13px;
+    background: #247DB3;
+}
+
+#header_right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 14px;
+    height: 13px;
+    background: #247DB3;
+}
+
+#header_left2 {
+    width: 14px;
+    height: 13px;
+    float: left;
+}
+
+#header_right2 {
+    width: 14px;
+    height: 13px;
+    float: right;
+}
+
+#logo {
+    position: absolute;
+    vertical-align: middle;
+    top: 0px;
+    left: 0px;
+    margin: 0px 0 0 15px;
+    padding: 0;
+    display: block;
+}
+
+#slogan {
+    top: 40px;
+    left: 145px;
+    position: absolute;
+    padding: 0;
+    display: block;
+}
+
+#header .last_modify {
+    color: #fff;
+}
+
+#navigation {
+    height: 41px;
+    background-color: #000;
+    text-align: center;
+}
+
+.borC25025 {
+    clear: both;
+    background-color: #C25025;
+    height: 5px;
+    font-size: 0;
+}
+
+#navigation a {
+    color: #fff;
+    vertical-align: middle;
+    display: block;
+    margin: 0;
+    float: left;
+    text-decoration: underline;
+    padding: 13px 20px 0 20px;
+    font: bold 11px/15px 'Tahoma', sans-serif;
+    background: #000;
+}
+
+#main {
+    padding: 10px 0 5px 0;
+    min-height: 100vh;
+}
+
+#left_column {
+    padding-right: 200px;
+}
+
+#right_content {
+    float: right;
+    width: 193px;
+}
+
+.banner_marg {
+    padding-bottom: 4px !important;
+    padding-bottom: 7px;
+}
+
+.banners_silver_block {
+    width: 193px;
+    color: #818181;
+    background: #eee;
+    padding: 12px 0 12px 0;
+    vertical-align: middle;
+    text-align: center;
+}
+
+
+/*FOOTER*/
+
+#navigation_footer {
+    border-top: 5px solid #C25025;
+    color: #818181;
+    padding: 10px 0;
+}
+
+#navigation_menu {
+    border-top: 5px solid #C25025;
+    color: #818181;
+    padding: 10px 0;
+}
+
+#navigation_lang {
+    border-top: 5px solid #C25025;
+    border-bottom: 5px solid #C25025;
+    color: #818181;
+    padding: 10px 0;
+}
+
+
+/* 
+
+#1C71AA is the standard color for links
+I don't know if I should follow the standard
+or follow the color palette of the web page.
+
+*/
+
+.blue_links a {
+    color: #a60f38;
+    text-decoration: underline;
+    font: bold 16px/20px 'Tahoma', sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.blue_links img {
+    vertical-align: middle;
+    background: #fff;
+    padding: 3px;
+}
+
+
+/*@media(max-width:380px) {
+    #header {
+        height: 190px;
+    }
+    #slogan {
+        top: 135px;
+        left: 20px;
+    }
+}*/

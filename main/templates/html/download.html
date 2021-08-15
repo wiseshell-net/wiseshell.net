@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}{% load l10n %}
+{% block content_title %}Download<a name="source"></a>{% endblock content_title %}
+{% block content_body %}
+<p>Since this game is made with C++ and SDL2, it supports a large variety of platforms, such as Windows, MacOSX, Linux, iOS and Android.</p>
+<p>Requirements for running this game are very low. You have to make sure that your device has a GPU for accelerated graphics.</p>
+<p>If, for any reason, your device does not have a GPU, you can try with software rendering, but this is unsupported.</p>
+<p>The current stable version is: alpha</p>
+
+<h2>List of supported platforms:</h2>
+<table class="table-container" bgcolor='#eeeeee' border='0' cellpadding='0' cellspacing='0' align='center' bgcolor='#000000' width='100%'><tr><td>
+<table border='0' cellpadding='5' cellspacing='1' width='100%'>
+<tr>
+ <td class="small-padding" style="border-bottom:1px solid black;" bgcolor='#eeeeee'>
+  <img style="border:0;width:176px;height:64px;" width="176" height="64" src="{% static 'assets/img/platforms/Windows10.png' %}" alt="Windows 10">
+<tr>
+ <td bgcolor='#eeeeee'>
+  <table class="padding" border='0' cellspacing='0' cellpadding='5'><tr><td>
+  <p>
+  This game is Free Software under the terms of version 3 of
+  the <a href='http://www.gnu.org/licenses/gpl.html'>GPL</a>.
+  This means you have four basic freedoms:</p>
+  <ul>
+   <li>Freedom to use the program any way you see fit.
+   <li>Freedom to study and modify the source code.
+   <li>Freedom to make backup copies.
+   <li>Freedom to redistribute it.
+  </ul>
+  <p>The GPL is the legal mechanism that gives you these freedoms.
+  It also protects you from having them taken away: any derivative work
+  based on the program must be under GPLv3 as well.</p>
+  </table>
+</table>
+</table>
+<table class="table-container" bgcolor='#eeeeee' border='0' cellpadding='0' cellspacing='0' align='center' bgcolor='#000000' width='100%'><tr><td>
+<table border='0' cellpadding='5' cellspacing='1' width='100%'>
+<tr>
+ <td class="small-padding" style="border-bottom:1px solid black;" bgcolor='#eeeeee'>
+  <img style="border:0;width:176px;height:64px;" width="176" height="64" src="{% static 'assets/img/platforms/Linux.png' %}" alt="Linux">
+<tr>
+ <td bgcolor='#eeeeee'>
+  <table class="padding" border='0' cellspacing='0' cellpadding='5'><tr><td>
+  <p>
+  This game is Free Software under the terms of version 3 of
+  the <a href='http://www.gnu.org/licenses/gpl.html'>GPL</a>.
+  This means you have four basic freedoms:</p>
+  <ul>
+   <li>Freedom to use the program any way you see fit.
+   <li>Freedom to study and modify the source code.
+   <li>Freedom to make backup copies.
+   <li>Freedom to redistribute it.
+  </ul>
+  <p>The GPL is the legal mechanism that gives you these freedoms.
+  It also protects you from having them taken away: any derivative work
+  based on the program must be under GPLv3 as well.</p>
+  </table>
+</table>
+</table>
+{% endblock content_body %}
