@@ -271,7 +271,6 @@ a.big_red:hover {
     margin: 0;
     float: left;
     text-decoration: underline;
-    padding: 13px 20px 0 20px;
     font: bold 11px/15px 'Tahoma', sans-serif;
     background: #000;
 }
@@ -307,23 +306,24 @@ a.big_red:hover {
 
 /*FOOTER*/
 
+.navigation {
+    padding: 10px;
+}
+
 #navigation_footer {
     border-top: 5px solid #C25025;
     color: #818181;
-    padding: 10px 0;
 }
 
 #navigation_menu {
     border-top: 5px solid #C25025;
     color: #818181;
-    padding: 10px 0;
 }
 
 #navigation_lang {
     border-top: 5px solid #C25025;
     border-bottom: 5px solid #C25025;
     color: #818181;
-    padding: 10px 0;
 }
 
 
@@ -339,8 +339,6 @@ or follow the color palette of the web page.
     color: #a60f38;
     text-decoration: underline;
     font: bold 16px/20px 'Tahoma', sans-serif;
-    padding-left: 20px;
-    padding-right: 20px;
 }
 
 .blue_links img {

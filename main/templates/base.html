@@ -28,26 +28,30 @@
         <!-- HEADER END-->
         <!-- TOP NAVIGATION BEGIN-->
         <!-- startskip -->
-        <div id="navigation_menu">
+        
+        <!-- Dillo 3.0.5 does not support margin or paddings in non-containers. -->
+        <!-- So, we have to put &nbsp; on it. -->
+        <div id="navigation_menu" class="navigation">
             <div class="blue_links">
                 {% block menu %}
-                <a href="/home/">Home</a>
-                <a href="/blog/">Blog</a>
-                <a href="/download/">Download</a>
-                <a href="/faq/">FAQ</a>
-                <a href="/wiki/">Wiki</a>
-                <a href="/source/">Source</a>
-                <a href="/donate/">Donate</a> {% endblock menu %}
+                <a href="/home/">Home</a>&nbsp;&nbsp;&nbsp;
+                <a href="/blog/">Blog</a>&nbsp;&nbsp;&nbsp;
+                <a href="/download/">Download</a>&nbsp;&nbsp;&nbsp;
+                <a href="/faq/">FAQ</a>&nbsp;&nbsp;&nbsp;
+                <a href="/wiki/">Wiki</a>&nbsp;&nbsp;&nbsp;
+                <a href="/source/">Source</a>&nbsp;&nbsp;&nbsp;
+                <a href="/donate/">Donate</a>&nbsp;&nbsp;&nbsp;
+                {% endblock menu %}
             </div>
         </div>
-        <div id="navigation_lang">
+        <div id="navigation_lang" class="navigation">
             <div class="blue_links">
-                <p>In other languages:<br/> {% block languages %}
-                    <a href="https://anybrowser.org/campaign/abdesign.html">Català</a>
-                    <a href="https://anybrowser.org/campaign/abdesign.html">Deutsch</a>
-                    <a href="https://anybrowser.org/campaign/abgraphics.html">English</a>
-                    <a href="https://anybrowser.org/campaign/abfaq.html">Español</a> {% endblock languages %}
-                </p>
+                {% block languages %}
+                    <a href="https://anybrowser.org/campaign/abdesign.html">Català</a>&nbsp;&nbsp;&nbsp;
+                    <a href="https://anybrowser.org/campaign/abdesign.html">Deutsch</a>&nbsp;&nbsp;&nbsp;
+                    <a href="https://anybrowser.org/campaign/abgraphics.html">English</a>&nbsp;&nbsp;&nbsp;
+                    <a href="https://anybrowser.org/campaign/abfaq.html">Español</a>&nbsp;&nbsp;&nbsp;
+                {% endblock languages %}
             </div>
         </div>
         <!-- endskip -->
@@ -72,7 +76,7 @@
             <div class="clear_width"></div>
         </div>
         <!-- FOOTER BEGIN-->
-        <div id="navigation_footer">
+        <div id="navigation_footer" class="navigation">
             <div class="blue_links center">
                 {% block footer %}
                 <a href="#top">Top</a> {% endblock footer %}
