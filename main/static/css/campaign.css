@@ -10,7 +10,7 @@
     padding: 0;
     margin: 0;
     border: none;
-    font: 100% 'Tahoma', sans-serif;
+    font: 16px 'Tahoma', sans-serif;
     color: #4B4B4B;
 }
 
@@ -35,7 +35,7 @@ p {
 h1,
 h2 {
     color: #a60f38;
-    font: bold 30px/35px 'Arial', sans-serif;
+    font: bold 30px 'Arial', sans-serif;
     border-bottom: 1px solid #d3d3d3;
     padding: 5px;
     margin-top: 10px;
@@ -43,7 +43,7 @@ h2 {
 }
 
 h2 {
-    font: bold 100% 'Arial', sans-serif;
+    font: bold 20px 'Arial', sans-serif;
 }
 
 h3 {

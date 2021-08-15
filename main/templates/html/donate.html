@@ -1,7 +1,19 @@
-{% extends 'base.html' %}
-{% load static %}{% load l10n %}
-{% block active_donate %}<a class="active" href="/donate/">Donate</a>{% endblock active_donate %}
-{% block content_title %}Donate{% endblock content_title %}
-{% block content_body %}
+{% extends 'base.html' %} {% load static %}{% load l10n %} {% block active_donate %}<a class="active" href="/donate/">Donate</a>{% endblock active_donate %} {% block content_title %}Donate{% endblock content_title %} {% block content_body %}
 <p>Thanks for considering a donation!</p>
+<p>If you enjoyed playing this game and would like to say thank you, invite me to a coffee, or help the project, you can donate!</p>
+<h2>Advantages</h2>
+<ul>
+    <li>Pre-releases availability</li>
+    <li>In-Game Donor Mention (5€ or more)</li>
+</ul>
+<h2>Fees</h2>
+<p>Please be aware of the fees for low volume sales. This should be taken into consideration before you are donating small amounts of money.</p>
+<h2>Why donate?</h2>
+<p>Donations help us improve the game and keep it alive. Examples of what the money could be used for are:</p>
+<ul>
+    <li>Server for hosting websites</li>
+    <li>Game content</li>
+    <li>Development</li>
+    <li>Coffee</li>
+</ul>
 {% endblock content_body %}
