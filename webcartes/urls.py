@@ -1,4 +1,4 @@
-"""portfolio URL Configuration
+"""Webcartes URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -26,16 +26,17 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('i18n/', include('django.conf.urls.i18n')),
     # Replace PortfolioList for WebList
-    path("", views.PortfolioList.as_view(template_name='html/index.html'), name="index"),
-    path("home/", views.PortfolioList.as_view(template_name='html/index.html'), name="home"),
+    path("", views.IndexList.as_view(template_name='html/index.html'), name="index"),
+    path("home/", views.IndexList.as_view(template_name='html/index.html'), name="home"),
     path('blog/', views.BlogList.as_view(template_name='html/blog.html'), name="blog"),
     path('download/', views.DownloadList.as_view(template_name='html/download.html'), name="download"),
     path('download_archive/', views.DownloadArchiveList.as_view(template_name='html/download_archive.html'), name="download_archive"),
     path('faq/', views.FaqList.as_view(template_name='html/faq.html'), name="faq"),
     path('wiki/', views.WikiList.as_view(template_name='html/wiki.html'), name="wiki"),
     path('source/', views.SourceList.as_view(template_name='html/source.html'), name="source"),
-    path('donate/', views.DonateList.as_view(template_name='html/donate.html'), name="donate")
+    path('donate/', views.DonateList.as_view(template_name='html/donate.html'), name="donate"),
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
     import debug_toolbar

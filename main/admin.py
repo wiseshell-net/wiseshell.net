@@ -1,11 +1,30 @@
 from django.contrib import admin
-from .models import Project
+from .models import Game, GameObjective
 
 # Register your models here.
 
-class ProjectAdmin(admin.ModelAdmin):
-    list_display = ('title_ca', 'title_es', 'title_en', 'created', 'modified')
+class GameObjectiveInline(admin.TabularInline):
+    list_display = ('get_game', 'objective')
+    model = GameObjective
+    def get_game(self, obj):
+        return obj.game.title
 
-    exclude = ('title', 'subtitle', 'alt', 'longdesc', 'web_name')
+class GameAdmin(admin.ModelAdmin):
+    list_display = ('title', 'published_by', 'last_modified', 'visible')
+    fieldsets = (
+        ("General", {
+            "fields": (
+                'title', 'published_by', 'origin', 'type', 'players', 'number_of_cards', 'deck', 'play', 'playing_time', 'description', 'visible'
+            ),
+        }),
+        ("Supported Features", {
+            "fields": (
+                'documentation', 'supported_rules', 'single_player', 'multiplayer', 'notes'
+            ),
+        }),
+    )
+    inlines = [
+        GameObjectiveInline,
+    ]
 
-admin.site.register(Project, ProjectAdmin)
+admin.site.register(Game, GameAdmin)

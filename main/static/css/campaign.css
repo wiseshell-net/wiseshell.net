@@ -37,7 +37,6 @@ h2 {
     color: #a60f38;
     font: bold 30px 'Arial', sans-serif;
     border-bottom: 1px solid #d3d3d3;
-    padding: 5px;
     margin-top: 10px;
     margin-bottom: 6px;
 }
@@ -59,23 +58,13 @@ table {
 
 th {
     font-weight: bold;
-    text-align: left;
     vertical-align: top;
     padding: 4px 0px;
 }
 
 ul {
-    padding-left: 40px;
+    padding-left: 15px;
     padding-bottom: 10px;
-}
-
-ol {
-    padding-left: 40px;
-    padding-bottom: 10px;
-}
-
-dd {
-    padding-left: 40px;
 }
 
 a:link {
@@ -119,6 +108,62 @@ a:hover {
     padding: 10px 0px;
 }
 
+
+/***** WIKI STUFF  *****/
+
+table.wiki,
+.wiki th,
+.wiki td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 7px;
+    text-align: center;
+}
+
+.wiki th,
+.wiki .gray {
+    background: #eaecf0;
+}
+
+.wiki .partial {
+    background: #ffcfa5;
+}
+
+.partial {
+    color: #ff8c00;
+}
+
+.wiki .unavailable {
+    background: #e1e1e1;
+}
+
+.unavailable {
+    color: #000000;
+}
+
+.wiki .yes {
+    background: #cfffbf;
+}
+
+.yes {
+    color: #008000;
+}
+
+.wiki .no {
+    background: #ffbfbf;
+}
+
+.no {
+    color: #8b0000;
+}
+
+
+/*********************/
+
+.gray {
+    border-bottom: 1px solid #d3d3d3;
+}
+
 .dark_red {
     color: #C25025;
 }
@@ -131,6 +176,10 @@ a.big_red {
 
 a.big_red:hover {
     color: #ee2055;
+}
+
+.bold {
+    font-weight: bold;
 }
 
 .italic {
@@ -189,7 +238,7 @@ a.big_red:hover {
 }
 
 #header {
-    height: 128px;
+    height: 75px;
     width: 100%;
     background: #a60f38;
     position: relative;
@@ -276,7 +325,6 @@ a.big_red:hover {
 }
 
 #main {
-    padding: 10px 0 5px 0;
     min-height: 100vh;
 }
 

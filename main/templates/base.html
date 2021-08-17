@@ -1,40 +1,48 @@
-{% load static %}{% load l10n %}
+{% load static %}{% load i18n %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
 <head>
     {% block head %}
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta http-equiv="Content-Language" content="en">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}Cartes{% endblock title %}</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/campaign.css' %}" title="Campaign Stylesheet">
+        <!-- HEAD -->
+            <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+            <meta http-equiv="Content-Language" content="en">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <title>{% block title %}Cartes{% endblock title %}</title>
+            <link rel="stylesheet" type="text/css" href="{% static 'css/campaign.css' %}" title="Campaign Stylesheet">
+        <!-- END HEAD -->
     {% endblock head %}
 </head>
 
 <body>
     <div id="global">
-        {% block content %}
+        {% block header %}
         <a name="top"></a>
         <!-- HEADER BEGIN-->
         <div id="header">
-            {% block header %}
             <div id="header_left2"></div>
             <div id="header_right2"></div>
-            <div id="logo"><img style="border:0;width:128px;height:128px;" src="{% static 'assets/img/logo/WCartes2_128x128.png' %}" alt="logo" width="128" height="128"></div>
-            <div id="slogan">TCartes</div>
+            <div id="logo"><img style="border:0;width:72px;height:72px;" src="{% static 'assets/img/logo/WCartes2_72x72.png' %}" alt="logo" width="72" height="72"></div>
+            <!--<div id="slogan">TCartes</div>-->
         </div>
         {% endblock header %}
         <!-- HEADER END-->
         <!-- TOP NAVIGATION BEGIN-->
         <!-- startskip -->
 
-        <!-- Dillo 3.0.5 does not support margin or paddings in non-containers. -->
+        <!-- Dillo 3.0.5 does not support margin or paddings in non-containers, such as p, span, etc. Only in div are applied. -->
         <!-- So, we have to put &nbsp; on it. -->
+        <!-- It also does not support indirect style referencing, such as `.wiki td { text-align:center }`, -->
+        <!-- or even `td { text-align: center }` when styling tables in CSS. -->
+        <!-- Even marking as !important, style does not apply... I need this reference directly from class -->
+        <!-- <hr> tag is not supported either. -->
+        <!-- And not sure why, but in wiki.html I have to use style="border-bottom: 1px solid #d3d3d3;" in a div, -->
+        <!--  because class attribute is not working. -->
         <div id="navigation_menu" class="navigation">
             <div class="white_links">
                 {% block menu %}
-                {% block active_home %}<a href="/home/">Home</a>{% endblock active_home %}&nbsp;&nbsp;&nbsp;
+                {% block active_home %}<a href="/home/">{% trans "Home" %}</a>{% endblock active_home %}&nbsp;&nbsp;&nbsp;
                 {% block active_blog %}<a href="/blog/">Blog</a>{% endblock active_blog %}&nbsp;&nbsp;&nbsp;
                 {% block active_download %}<a href="/download/">Download</a>{% endblock active_download %}&nbsp;&nbsp;&nbsp;
                 {% block active_faq %}<a href="/faq/">FAQ</a>{% endblock active_faq %}&nbsp;&nbsp;&nbsp;
@@ -56,10 +64,16 @@
         </div>
         <!-- endskip -->
         <div id="main">
+        {% block content %}
+              <!-- Reserved for breadcrumbs -->
+      {% block wiki_breadcrumbs %}{% endblock %}
+
+      <!-- Main page contents go here -->
+      {% block wiki_contents %}{% endblock %}
+      <div class="padding">
         <h1>{% block content_title %}Content title{% endblock content_title %}</h1>
-            <div class="padding">
                 {% block content_body %}
-                Content body
+                <p>Content body</p>
                 {% endblock content_body %}
                 <!-- end contents -->
                 <div class="red_links center">

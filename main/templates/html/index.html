@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
-{% block active_home %}<a class="active" href="/home/">Home</a>{% endblock active_home %}
+{% load i18n %}
+{% block active_home %}<a class="active" href="/home/">{% trans "Home" %}</a>{% endblock active_home %}
 {% block content_body %}
-                <p class="quot">"Anyone who slaps a 'this page is best viewed with Browser X' label on a Web page appears to be yearning for the bad old days, before the Web, when you had very little chance of reading a document written on another computer, another word
-                    processor, or another network."</p>
+<p class="quot">"Anyone who slaps a 'this page is best viewed with Browser X' label on a Web page appears to be yearning for the bad old days, before the Web, when you had very little chance of reading a document written on another computer, another word
+    processor, or another network."</p>
 
-                <p>I invite anyone who wants to join in this effort to go ahead and copy any of the many graphics provided by participants in the campaign, which are available on the <a href="https://anybrowser.org/campaign/abgraphics.html">Any Browser
-							Graphics</a> page. If you feel like creating other graphics for the campaign, please do! (and let me know if I can provide that graphic for others to use). I would prefer if you linked the graphic to this page, so that people know what it's all
-                    about, or create your own page about this campaign, but if you don't want to that's cool with me too. </p>
+<p>I invite anyone who wants to join in this effort to go ahead and copy any of the many graphics provided by participants in the campaign, which are available on the <a href="https://anybrowser.org/campaign/abgraphics.html">Any Browser
+            Graphics</a> page. If you feel like creating other graphics for the campaign, please do! (and let me know if I can provide that graphic for others to use). I would prefer if you linked the graphic to this page, so that people know what it's all
+    about, or create your own page about this campaign, but if you don't want to that's cool with me too. </p>
 
-                <p class="code">&lt;p&gt;&lt;a href="http://www.anybrowser.org/campaign/"&gt;&lt;img src="path-to-graphic/graphicname" width="graphic-width-in-pixels" height="graphic-height-in-pixels" alt="Viewable With Any Browser" /&gt;&lt;/a&gt;&lt;/p&gt;
-                </p>
-                {% endblock content_body %}
+<p class="code">&lt;p&gt;&lt;a href="http://www.anybrowser.org/campaign/"&gt;&lt;img src="path-to-graphic/graphicname" width="graphic-width-in-pixels" height="graphic-height-in-pixels" alt="Viewable With Any Browser" /&gt;&lt;/a&gt;&lt;/p&gt;
+</p>
+{% endblock content_body %}

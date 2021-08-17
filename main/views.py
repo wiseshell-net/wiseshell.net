@@ -1,15 +1,14 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from .models import Project
+from .models import Game
 
 # Create your views here.
-class PortfolioList(TemplateView):
+
+class IndexList(TemplateView):
     template_name = "index.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        projects = Project.objects.all()
-        context["projects"] = projects
         return context
 
 class BlogList(TemplateView):
@@ -36,12 +35,6 @@ class FaqList(TemplateView):
         context = super().get_context_data(**kwargs)
         return context
 
-class WikiList(TemplateView):
-    template_name = "wiki.html"
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
-
 class SourceList(TemplateView):
     template_name = "source.html"
     def get_context_data(self, **kwargs):
@@ -52,4 +45,13 @@ class DonateList(TemplateView):
     template_name = "donate.html"
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        return context
+
+class WikiList(TemplateView):
+    template_name = "wiki.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        games = Game.objects.all()
+        context["games"] = games
         return context
