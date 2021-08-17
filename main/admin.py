@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Game, GameObjective
+from .models import Game, GameVariant, GameObjective
 
 # Register your models here.
 
@@ -8,6 +8,18 @@ class GameObjectiveInline(admin.TabularInline):
     model = GameObjective
     def get_game(self, obj):
         return obj.game.title
+
+
+"""
+class GameVariantInline(admin.TabularInline):
+    list_display = ('get_game', 'get_game_variant')
+    model = GameVariant
+    def get_game(self, obj):
+        return obj.game.title
+
+    def get_game_variant(self, obj):
+        return obj.variant.title
+"""
 
 class GameAdmin(admin.ModelAdmin):
     list_display = ('title', 'published_by', 'last_modified', 'visible')
@@ -25,6 +37,7 @@ class GameAdmin(admin.ModelAdmin):
     )
     inlines = [
         GameObjectiveInline,
+        #GameVariantInline
     ]
 
 admin.site.register(Game, GameAdmin)

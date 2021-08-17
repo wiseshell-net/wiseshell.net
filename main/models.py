@@ -41,4 +41,8 @@ class GameObjective(models.Model):
     objective =  models.TextField()
     image = models.ImageField(upload_to = 'game_photo/', blank=True, null=True)
     caption = models.CharField(max_length=1000, blank=True, null=True)
-    alt = models.CharField(max_length=400)
+    alt = models.CharField(max_length=400, blank=True, null=True)
+
+class GameVariant(models.Model):
+    game = models.ForeignKey(Game, on_delete=models.CASCADE, related_name="original_game")
+    variant = models.ForeignKey(Game, on_delete=models.CASCADE, related_name="game_variant")
