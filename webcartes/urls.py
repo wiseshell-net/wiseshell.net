@@ -33,6 +33,7 @@ urlpatterns = [
     path('download_archive/', views.DownloadArchiveList.as_view(template_name='html/download_archive.html'), name="download_archive"),
     path('faq/', views.FaqList.as_view(template_name='html/faq.html'), name="faq"),
     path('wiki/', views.WikiList.as_view(template_name='html/wiki.html'), name="wiki"),
+    path('wiki/game/<int:pk>/<str:title>/', views.GameDetail.as_view(template_name='html/game.html'), name='info_game'),
     path('source/', views.SourceList.as_view(template_name='html/source.html'), name="source"),
     path('donate/', views.DonateList.as_view(template_name='html/donate.html'), name="donate"),
 ]

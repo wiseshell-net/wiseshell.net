@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}{% load l10n %}
-{% block active_download %}<a class="active" href="/download/">Download</a>{% endblock active_download %}
+{% block active_download %}<a class="active" href="{% url 'download' %}">Download</a>{% endblock active_download %}
 {% block content_title %}Download<a name="source"></a>{% endblock content_title %}
 {% block content_body %}
 <p>Since this game is made with C++ and SDL2, it supports a large variety of platforms, such as Windows, MacOSX, Linux, iOS and Android.</p>

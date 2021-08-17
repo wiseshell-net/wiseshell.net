@@ -165,7 +165,7 @@ table.wiki,
 }
 
 .dark_red {
-    color: #C25025;
+    color: #a60f38;
 }
 
 a.big_red {
@@ -402,6 +402,10 @@ or follow the color palette of the web page.
     color: #a60f38;
     text-decoration: underline;
     font: bold 16px/20px 'Tahoma', sans-serif;
+}
+
+.red_links a:hover {
+    color: #e70000;
 }
 
 .red_links img {

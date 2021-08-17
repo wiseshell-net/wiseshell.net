@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load i18n %}
-{% block active_home %}<a class="active" href="/home/">{% trans "Home" %}</a>{% endblock active_home %}
+{% block active_home %}<a class="active" href="{% url 'home' %}">{% trans "Home" %}</a>{% endblock active_home %}
 {% block content_body %}
 <p class="quot">"Anyone who slaps a 'this page is best viewed with Browser X' label on a Web page appears to be yearning for the bad old days, before the Web, when you had very little chance of reading a document written on another computer, another word
     processor, or another network."</p>

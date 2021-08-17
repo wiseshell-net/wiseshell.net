@@ -1,12 +1,11 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, DetailView
 from .models import Game
 
 # Create your views here.
 
 class IndexList(TemplateView):
     template_name = "index.html"
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
@@ -49,9 +48,18 @@ class DonateList(TemplateView):
 
 class WikiList(TemplateView):
     template_name = "wiki.html"
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         games = Game.objects.all()
         context["games"] = games
+        return context
+
+class GameDetail(DetailView):
+    model = Game
+    template_name="html/game.html"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        pk = self.kwargs.get(self.pk_url_kwarg)
+        game = Game.objects.get(pk=pk)
+        context["game"] = game
         return context

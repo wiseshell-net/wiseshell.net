@@ -42,13 +42,13 @@
         <div id="navigation_menu" class="navigation">
             <div class="white_links">
                 {% block menu %}
-                {% block active_home %}<a href="/home/">{% trans "Home" %}</a>{% endblock active_home %}&nbsp;&nbsp;&nbsp;
-                {% block active_blog %}<a href="/blog/">Blog</a>{% endblock active_blog %}&nbsp;&nbsp;&nbsp;
-                {% block active_download %}<a href="/download/">Download</a>{% endblock active_download %}&nbsp;&nbsp;&nbsp;
-                {% block active_faq %}<a href="/faq/">FAQ</a>{% endblock active_faq %}&nbsp;&nbsp;&nbsp;
-                {% block active_wiki %}<a href="/wiki/">Wiki</a>{% endblock active_wiki %}&nbsp;&nbsp;&nbsp;
-                {% block active_source %}<a href="/source/">Source</a>{% endblock active_source %}&nbsp;&nbsp;&nbsp;
-                {% block active_donate %}<a href="/donate/">Donate</a>{% endblock active_donate %}<img style="border:0;background:none;width:16px;height:16px;" src="{% static 'assets/img/heart.gif' %}" width="16" height="16" />&nbsp;&nbsp;&nbsp;
+                {% block active_home %}<a href="{% url 'home' %}">{% trans "Home" %}</a>{% endblock active_home %}&nbsp;&nbsp;&nbsp;
+                {% block active_blog %}<a href="{% url 'blog' %}">Blog</a>{% endblock active_blog %}&nbsp;&nbsp;&nbsp;
+                {% block active_download %}<a href="{% url 'download' %}">Download</a>{% endblock active_download %}&nbsp;&nbsp;&nbsp;
+                {% block active_faq %}<a href="{% url 'faq' %}">FAQ</a>{% endblock active_faq %}&nbsp;&nbsp;&nbsp;
+                {% block active_wiki %}<a href="{% url 'wiki' %}">Wiki</a>{% endblock active_wiki %}&nbsp;&nbsp;&nbsp;
+                {% block active_source %}<a href="{% url 'source' %}">Source</a>{% endblock active_source %}&nbsp;&nbsp;&nbsp;
+                {% block active_donate %}<a href="{% url 'donate' %}">Donate</a>{% endblock active_donate %}<img style="border:0;background:none;width:16px;height:16px;" src="{% static 'assets/img/heart.gif' %}" width="16" height="16" />&nbsp;&nbsp;&nbsp;
                 {% endblock menu %}
             </div>
         </div>

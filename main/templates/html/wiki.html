@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% load i18n %}
-{% block active_wiki %}<a class="active" href="/wiki/">Wiki</a>{% endblock active_wiki %}
+{% block active_wiki %}<a class="active" href="{% url 'wiki' %}">Wiki</a>{% endblock active_wiki %}
 {% block content_title %}Wiki{% endblock content_title %}
 {% block content_body %}
 <p>Small description of the wiki.</p>
@@ -23,12 +23,12 @@
             {% for game in games %}
             <!-- .wiki td:nth-child(even) is not supported in Dillo -->
             <tr {% if forloop.counter|divisibleby:2 %} class="gray" {% endif %}>
-                <td class="center">{{ game.title|safe }}</td>
-                <td class="center {% if game.documentation == "Y" %} yes {% else %}{% if game.documentation == "N" %} no {% else %}{% if game.documentation == "P" %} partial {% else %} unavailable {% endif %}{% endif %}{% endif %}">{{ game.documentation|safe }}</td>
-                <td class="center {% if game.supported_rules == "Y" %} yes {% else %}{% if game.supported_rules == "N" %} no {% else %}{% if game.supported_rules == "P" %} partial {% else %} unavailable {% endif %}{% endif %}{% endif %}">{{ game.supported_rules|safe }}</td>
-                <td class="center {% if game.single_player == "Y" %} yes {% else %}{% if game.single_player == "N" %} no {% else %}{% if game.single_player == "P" %} partial {% else %} unavailable {% endif %}{% endif %}{% endif %}">{{ game.single_player|safe }}</td>
-                <td class="center {% if game.multiplayer == "Y" %} yes {% else %}{% if game.multiplayer == "N" %} no {% else %}{% if game.multiplayer == "P" %} partial {% else %} unavailable {% endif %}{% endif %}{% endif %}">{{ game.multiplayer|safe }}</td>
-                <td class="center">{% if game.notes %}{{ game.notes|safe }}{% else %}{% trans "No notes available" %}.{% endif %}</td>
+                <td class="center">{{ game.title|escape }}</td>
+                <td class="center {% if game.documentation == "Y" %} yes {% else %}{% if game.documentation == "N" %} no {% else %}{% if game.documentation == "P" %} partial {% else %} unavailable {% endif %}{% endif %}{% endif %}">{{ game.documentation|escape }}</td>
+                <td class="center {% if game.supported_rules == "Y" %} yes {% else %}{% if game.supported_rules == "N" %} no {% else %}{% if game.supported_rules == "P" %} partial {% else %} unavailable {% endif %}{% endif %}{% endif %}">{{ game.supported_rules|escape }}</td>
+                <td class="center {% if game.single_player == "Y" %} yes {% else %}{% if game.single_player == "N" %} no {% else %}{% if game.single_player == "P" %} partial {% else %} unavailable {% endif %}{% endif %}{% endif %}">{{ game.single_player|escape }}</td>
+                <td class="center {% if game.multiplayer == "Y" %} yes {% else %}{% if game.multiplayer == "N" %} no {% else %}{% if game.multiplayer == "P" %} partial {% else %} unavailable {% endif %}{% endif %}{% endif %}">{{ game.multiplayer|escape }}</td>
+                <td class="center">{% if game.notes %}{{ game.notes|escape }}{% else %}{% trans "No notes available" %}.{% endif %}</td>
             </tr>
             {% endfor %}
         </tbody>
@@ -45,13 +45,13 @@
         <td bgcolor='#eeeeee'>
             <table class="padding" border='0' cellspacing='0' cellpadding='5'><tr><td>
             <ul>
-                <li class="bold">Yes: <span class="bold yes">Yes</span></li>
-                <li class="bold">No: <span class="bold no">No</span></li>
-                <li class="bold">Partial: <span class="bold partial">Partial</span></li>
-                <li class="bold">Unavailable: <span class="bold unavailable">Unavailable</span></li>
+                <li class="bold">Yes: <span class="bold yes">Y</span></li>
+                <li class="bold">No: <span class="bold no">N</span></li>
+                <li class="bold">Partial: <span class="bold partial">P</span></li>
+                <li class="bold">Not Available: <span class="bold unavailable">Unavailable</span></li>
             </ul>
             {% if game.notes %}
-            <p>{{ game.notes|safe }}</p>
+            <p>{{ game.notes|escape }}</p>
             {% endif %}
             </table>
         </table>
@@ -64,15 +64,15 @@
         <table border='0' cellpadding='5' cellspacing='1' width='100%'>
         <tr>
         <td class="small-padding" style="border-bottom:1px solid black;" bgcolor='#eeeeee'>
-        <p class="bold">{{game.title|safe}}</p>
+        <p class="red_links bold"><a href="{% url 'info_game' game.id game.title|escape %}">{{game.title|escape}}</a></p>
         <tr>
         <td bgcolor='#eeeeee'>
             <table class="padding" border='0' cellspacing='0' cellpadding='5'><tr><td>
             <ul>
-                <li class="bold">Documentation: <span class="bold {% if game.documentation == "Y" %} yes {% else %}{% if game.documentation == "N" %} no {% else %}{% if game.documentation == "P" %} partial {% else %} unavailable {% endif %}{% endif %}{% endif %}">{{ game.documentation|safe }}</span></li>
-                <li class="bold">Supported rules: <span class="bold {% if game.supported_rules == "Y" %} yes {% else %}{% if game.supported_rules == "N" %} no {% else %}{% if game.supported_rules == "P" %} partial {% else %} unavailable {% endif %}{% endif %}{% endif %}">{{ game.supported_rules|safe }}</span></li>
-                <li class="bold">Single Player: <span class="bold {% if game.single_player == "Y" %} yes {% else %}{% if game.single_player == "N" %} no {% else %}{% if game.single_player == "P" %} partial {% else %} unavailable {% endif %}{% endif %}{% endif %}">{{ game.single_player|safe }}</span></li>
-                <li class="bold">Multiplayer: <span class="bold {% if game.multiplayer == "Y" %} yes {% else %}{% if game.multiplayer == "N" %} no {% else %}{% if game.multiplayer == "P" %} partial {% else %} unavailable {% endif %}{% endif %}{% endif %}">{{ game.multiplayer|safe }}</span></li>
+                <li class="bold">Documentation: <span class="bold {% if game.documentation == "Y" %} yes {% else %}{% if game.documentation == "N" %} no {% else %}{% if game.documentation == "P" %} partial {% else %} unavailable {% endif %}{% endif %}{% endif %}">{{ game.documentation|escape }}</span></li>
+                <li class="bold">Supported rules: <span class="bold {% if game.supported_rules == "Y" %} yes {% else %}{% if game.supported_rules == "N" %} no {% else %}{% if game.supported_rules == "P" %} partial {% else %} unavailable {% endif %}{% endif %}{% endif %}">{{ game.supported_rules|escape }}</span></li>
+                <li class="bold">Single Player: <span class="bold {% if game.single_player == "Y" %} yes {% else %}{% if game.single_player == "N" %} no {% else %}{% if game.single_player == "P" %} partial {% else %} unavailable {% endif %}{% endif %}{% endif %}">{{ game.single_player|escape }}</span></li>
+                <li class="bold">Multiplayer: <span class="bold {% if game.multiplayer == "Y" %} yes {% else %}{% if game.multiplayer == "N" %} no {% else %}{% if game.multiplayer == "P" %} partial {% else %} unavailable {% endif %}{% endif %}{% endif %}">{{ game.multiplayer|escape }}</span></li>
             </ul>
             {% if game.notes %}
             <p>{{ game.notes|escape }}</p>
