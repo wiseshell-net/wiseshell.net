@@ -21,8 +21,8 @@
         <a name="top"></a>
         <!-- HEADER BEGIN-->
         <div id="header">
-            <div id="header_left2"></div>
-            <div id="header_right2"></div>
+            <div id="headerleft2"></div>
+            <div id="headerright2"></div>
             <div id="logo"><img style="border:0;width:72px;height:72px;" src="{% static 'assets/img/logo/WCartes2_72x72.png' %}" alt="logo" width="72" height="72"></div>
             <!--<div id="slogan">TCartes</div>-->
         </div>
@@ -30,18 +30,18 @@
         <!-- HEADER END-->
         <!-- TOP NAVIGATION BEGIN-->
         <!-- startskip -->
-
-        <!-- Dillo 3.0.5 does not support margin or paddings in non-containers, such as p, span, etc. Only in div are applied. -->
-        <!-- So, we have to put &nbsp; on it. -->
-        <!-- It also does not support indirect style referencing, such as `.wiki td { text-align:center }`, -->
-        <!-- or even `td { text-align: center }` when styling tables in CSS. -->
-        <!-- Even marking as !important, style does not apply... I need this reference directly from class -->
-        <!-- <hr> tag is not supported either. -->
-        <!-- And not sure why, but in wiki.html I have to use style="border-bottom: 1px solid #d3d3d3;" in a div, -->
-        <!--  because class attribute is not working. -->
-        <div id="navigation_menu" class="navigation">
-            <div class="white_links">
-                {% block menu %}
+        {% comment %}
+        DILLO 3.0.5
+        - Dillo 3.0.5 does not support margin or paddings in non-containers, such as p, span, etc. Only in div are applied. So, we have to put &nbsp; on it.
+        - It also does not support indirect style referencing, such as `.wiki td { text-align:center }`, or even `td { text-align: center }` when styling tables in CSS.
+            Even marking as !important, style does not apply... I need this reference directly from class.
+        - <hr> tag is not supported either.
+        - And not sure why, but in wiki.html I have to use style="border-bottom: 1px solid #d3d3d3;" in a div, because class attribute is not working.
+        WINDOWS INTERNET EXPLORER
+        - In some old browsers, such as Internet Explorer 4.0, underscore ( _ ) is not supported. Declaring, for example, #nav_footer in CSS would be an error.
+        {% endcomment %}
+        <div id="navmenu" class="navigation">
+            <div class="whitelinks">
                 {% block active_home %}<a href="{% url 'home' %}">{% trans "Home" %}</a>{% endblock active_home %}&nbsp;&nbsp;&nbsp;
                 {% block active_blog %}<a href="{% url 'blog' %}">Blog</a>{% endblock active_blog %}&nbsp;&nbsp;&nbsp;
                 {% block active_download %}<a href="{% url 'download' %}">Download</a>{% endblock active_download %}&nbsp;&nbsp;&nbsp;
@@ -49,51 +49,44 @@
                 {% block active_wiki %}<a href="{% url 'wiki' %}">Wiki</a>{% endblock active_wiki %}&nbsp;&nbsp;&nbsp;
                 {% block active_source %}<a href="{% url 'source' %}">Source</a>{% endblock active_source %}&nbsp;&nbsp;&nbsp;
                 {% block active_donate %}<a href="{% url 'donate' %}">Donate</a>{% endblock active_donate %}<img style="border:0;background:none;width:16px;height:16px;" src="{% static 'assets/img/heart.gif' %}" width="16" height="16" />&nbsp;&nbsp;&nbsp;
-                {% endblock menu %}
             </div>
         </div>
-        <div id="navigation_lang" class="navigation">
-            <div class="red_links">
-                {% block languages %}
-                    <a href="https://anybrowser.org/campaign/abdesign.html">Català</a>&nbsp;&nbsp;&nbsp;
-                    <a href="https://anybrowser.org/campaign/abdesign.html">Deutsch</a>&nbsp;&nbsp;&nbsp;
-                    <a href="https://anybrowser.org/campaign/abgraphics.html">English</a>&nbsp;&nbsp;&nbsp;
-                    <a href="https://anybrowser.org/campaign/abfaq.html">Español</a>&nbsp;&nbsp;&nbsp;
-                {% endblock languages %}
+        <div id="navlang" class="navigation">
+            <div class="redlinks">
+                <a href="https://anybrowser.org/campaign/abdesign.html">Català</a>&nbsp;&nbsp;&nbsp;
+                <a href="https://anybrowser.org/campaign/abdesign.html">Deutsch</a>&nbsp;&nbsp;&nbsp;
+                <a href="https://anybrowser.org/campaign/abgraphics.html">English</a>&nbsp;&nbsp;&nbsp;
+                <a href="https://anybrowser.org/campaign/abfaq.html">Español</a>&nbsp;&nbsp;&nbsp;
             </div>
         </div>
         <!-- endskip -->
         <div id="main">
         {% block content %}
-              <!-- Reserved for breadcrumbs -->
-      {% block wiki_breadcrumbs %}{% endblock %}
-
-      <!-- Main page contents go here -->
-      {% block wiki_contents %}{% endblock %}
       <div class="padding">
         <h1>{% block content_title %}Content title{% endblock content_title %}</h1>
                 {% block content_body %}
                 <p>Content body</p>
                 {% endblock content_body %}
                 <!-- end contents -->
-                <div class="red_links center">
+                <div class="redlinks center">
                     {% block badges %}
-                    <a href="https://anybrowser.org/campaign/index.html"><img style="border:0;width:96px;height:32px;" src="{% static 'assets/img/button_enhanced.gif' %}" alt="Content Enhanced - Use Any Browser" class="banner_marg" width="96" height="32"></a>
-                    <a href="http://www.opencontent.org/"><img style="border:0;width:85px;height:33px;" src="{% static 'assets/img/button_takeone.gif' %}" alt="Open Content" class="banner_marg" width="85" height="33"></a>
-                    <a href="http://validator.w3.org/"><img style="border:0;width:88px;height:31px;" src="{% static 'assets/img/valid-xhtml10.png' %}" alt="W3C XHTML 1.0" class="banner_marg" width="88" height="31"></a>
-                    <a href="https://jigsaw.w3.org/css-validator/"><img style="border:0;width:88px;height:31px;" src="{% static 'assets/img/vcss.gif' %}" alt="Valid CSS!" class="banner_marg" width="88" height="31"></a>
-                    <a href="http://www.webstandards.org/"><img style="border:0;width:90px;height:35px;" src="{% static 'assets/img/wspnow.gif' %}" alt="Web Standards Now!" class="banner_marg" width="90" height="35"></a>
+                    <a href="https://anybrowser.org/campaign/index.html"><img style="border:0;width:96px;height:32px;" src="{% static 'assets/img/button_enhanced.gif' %}" alt="Content Enhanced - Use Any Browser" class="bannermarg" width="96" height="32"></a>
+                    <a href="http://www.opencontent.org/"><img style="border:0;width:85px;height:33px;" src="{% static 'assets/img/button_takeone.gif' %}" alt="Open Content" class="bannermarg" width="85" height="33"></a>
+                    <a href="http://validator.w3.org/"><img style="border:0;width:88px;height:31px;" src="{% static 'assets/img/valid-xhtml10.png' %}" alt="W3C XHTML 1.0" class="bannermarg" width="88" height="31"></a>
+                    <a href="https://jigsaw.w3.org/css-validator/"><img style="border:0;width:88px;height:31px;" src="{% static 'assets/img/vcss.gif' %}" alt="Valid CSS!" class="bannermarg" width="88" height="31"></a>
+                    <a href="http://www.webstandards.org/"><img style="border:0;width:90px;height:35px;" src="{% static 'assets/img/wspnow.gif' %}" alt="Web Standards Now!" class="bannermarg" width="90" height="35"></a>
                     {% endblock badges %}
                 </div>
             </div>
             <!-- LEFT END-->
-            <div class="clear_width"></div>
+            <div class="clearwidth"></div>
         </div>
         <!-- FOOTER BEGIN-->
-        <div id="navigation_footer" class="navigation">
-            <div class="red_links center">
+        <div id="navfooter" class="navigation">
+            <div class="redlinks center">
                 {% block footer %}
-                <a href="#top">Top</a> {% endblock footer %}
+                <a class="center" href="#top">Top</a> 
+                {% endblock footer %}
             </div>
         </div>
         {% endblock content %}

@@ -1,4 +1,5 @@
 from django.db import models
+from tinymce.models import HTMLField
 
 # Create your models here.
 
@@ -7,6 +8,8 @@ from django.db import models
 
 # Image will go into main board
 class Game(models.Model):
+    NOTES_DESCRIPTION = "Separate your explanation in paragraphs if needed."
+    
     title = models.CharField(max_length=400, help_text="If you need some clue about how to fill this, please see https://en.wikipedia.org/wiki/Escoba")
     published_by = models.CharField(max_length=400)
     origin = models.CharField(max_length=400)
@@ -16,7 +19,7 @@ class Game(models.Model):
     deck = models.CharField(max_length=400)
     play = models.CharField(max_length=400)
     playing_time = models.CharField(max_length=400)
-    description = models.TextField()
+    description = HTMLField(blank=True, null=True, help_text=NOTES_DESCRIPTION)
     visible = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now=True)
     last_modified = models.DateTimeField(auto_now=True)
@@ -29,16 +32,18 @@ class Game(models.Model):
         ('P', 'Partial (need explanation in notes)'),
         ('Unavailable', 'Unavailable')
     )
+    NOTES_FIELD = "<p>Please insert the explanation here. You can put bullets to clarify your explanation: </p><ul><li>This rule is not implemented</li><li>This feature needs to be polished</li></ul>"
     documentation = models.CharField(max_length=11, choices=SUPPORT_CHOICES)
     supported_rules = models.CharField(max_length=11, choices=SUPPORT_CHOICES)
     single_player = models.CharField(max_length=11, choices=SUPPORT_CHOICES)
     multiplayer = models.CharField(max_length=11, choices=SUPPORT_CHOICES)
-    notes = models.TextField(blank=True, null=True)
+    notes = HTMLField(blank=True, null=True, help_text=NOTES_FIELD)
 
 # This will go into objective
 class GameObjective(models.Model):
     game = models.ForeignKey(Game, on_delete=models.CASCADE, related_name="game_objective")
-    objective =  models.TextField()
+    title = models.CharField(max_length=50, help_text="If you need some clue about how to fill this, please see https://en.wikipedia.org/wiki/Escoba")
+    description = HTMLField()
     image = models.ImageField(upload_to = 'game_photo/', blank=True, null=True)
     caption = models.CharField(max_length=1000, blank=True, null=True)
     alt = models.CharField(max_length=400, blank=True, null=True)

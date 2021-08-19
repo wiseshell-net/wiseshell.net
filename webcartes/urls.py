@@ -36,6 +36,7 @@ urlpatterns = [
     path('wiki/game/<int:pk>/<str:title>/', views.GameDetail.as_view(template_name='html/game.html'), name='info_game'),
     path('source/', views.SourceList.as_view(template_name='html/source.html'), name="source"),
     path('donate/', views.DonateList.as_view(template_name='html/donate.html'), name="donate"),
+    path('tinymce/', include('tinymce.urls')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

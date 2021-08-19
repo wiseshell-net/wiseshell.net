@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
+{% block active_wiki %}<a class="active" href="{% url 'wiki' %}">Wiki</a>{% endblock active_wiki %}
+{% block content_title %}{{ game.title|escape }}{% endblock content_title %}
 {% block content_body %}
-{{ game }}
-{{ game.title }}
-{{ game.documentation }}
-{{ game.single_player }}
-{{ game.multiplayer }}
+{{ game.description|safe }}
+<h2>Status Legend</h2>
+{% include 'partial/legend.html' %}
+<h2>Support status</h2>
+{% include 'partial/game_summary.html' %}
+<h2>Objective</h2>
+{% for objective in objectives %}
+<h3>{{objective.title}}</h3>
+{{ objective.description }}
+{% endfor %}
 {% endblock content_body %}

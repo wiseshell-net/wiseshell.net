@@ -9,6 +9,7 @@
 * {
     padding: 0;
     margin: 0;
+    border: 0;
     border: none;
     font: 16px 'Tahoma', sans-serif;
     color: #4B4B4B;
@@ -73,7 +74,7 @@ a:link {
 }
 
 a:visited {
-    color: #527931;
+    color: #ffffff;
     text-decoration: underline;
 }
 
@@ -82,7 +83,7 @@ a:hover {
     text-decoration: underline;
 }
 
-.clear_width {
+.clearwidth {
     /*	width:770px; */
     clear: both;
 }
@@ -263,16 +264,17 @@ a.big_red:hover {
     right: 0;
     width: 14px;
     height: 13px;
+    border: none;
     background: #247DB3;
 }
 
-#header_left2 {
+#headerleft2 {
     width: 14px;
     height: 13px;
     float: left;
 }
 
-#header_right2 {
+#headerright2 {
     width: 14px;
     height: 13px;
     float: right;
@@ -337,7 +339,7 @@ a.big_red:hover {
     width: 193px;
 }
 
-.banner_marg {
+.bannermarg {
     padding-bottom: 4px !important;
     padding-bottom: 7px;
 }
@@ -358,18 +360,18 @@ a.big_red:hover {
     padding: 10px;
 }
 
-#navigation_footer {
+#navfooter {
     border-top: 5px solid #C25025;
     color: #818181;
 }
 
-#navigation_menu {
+#navmenu {
     border-top: 5px solid #eeeeee;
     background: #950d32;
     color: #818181;
 }
 
-#navigation_lang {
+#navlang {
     border-top: 5px solid #C25025;
     border-bottom: 5px solid #C25025;
     color: #818181;
@@ -384,31 +386,31 @@ or follow the color palette of the web page.
 
 */
 
-.white_links a {
+.whitelinks a {
     color: #ffffff;
     text-decoration: underline;
     font: bold 16px/20px 'Tahoma', sans-serif;
 }
 
-.white_links a.active {
+.whitelinks a.active {
     color: #deb2bd;
 }
 
-.white_links a:hover {
+.whitelinks a:hover {
     color: #deb2bd;
 }
 
-.red_links a {
+.redlinks a {
     color: #a60f38;
     text-decoration: underline;
     font: bold 16px/20px 'Tahoma', sans-serif;
 }
 
-.red_links a:hover {
+.redlinks a:hover {
     color: #e70000;
 }
 
-.red_links img {
+.redlinks img {
     vertical-align: middle;
     background: #fff;
     padding: 3px;
