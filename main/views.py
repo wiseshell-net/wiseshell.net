@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, DetailView
-from .models import Game, GameObjective
+from .models import Game, GameRegulation
 
 # Create your views here.
 
@@ -61,8 +61,7 @@ class GameDetail(DetailView):
         context = super().get_context_data(**kwargs)
         pk = self.kwargs.get(self.pk_url_kwarg)
         game = Game.objects.get(pk=pk)
-        #objectives = GameObjective.objects.filter(id=pk)
-        #import pdb; pdb.set_trace()
+        regulations = GameRegulation.objects.filter(game__id=pk)
         context["game"] = game
-        #context["objectives"] = objectives
+        context["regulations"] = regulations
         return context

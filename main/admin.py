@@ -1,11 +1,11 @@
 from django.contrib import admin
-from .models import Game, GameVariant, GameObjective
+from .models import Game, GameVariant, GameRegulation
 
 # Register your models here.
 
-class GameObjectiveInline(admin.TabularInline):
+class GameRegulationInline(admin.TabularInline):
     list_display = ('get_game', 'objective')
-    model = GameObjective
+    model = GameRegulation
     def get_game(self, obj):
         return obj.game.title
 
@@ -26,7 +26,7 @@ class GameAdmin(admin.ModelAdmin):
     fieldsets = (
         ("General", {
             "fields": (
-                'title', 'published_by', 'origin', 'type', 'players', 'number_of_cards', 'deck', 'play', 'playing_time', 'description', 'visible'
+                'title', 'published_by', 'origin', 'type', 'players', 'number_of_cards', 'deck', 'play', 'playing_time', 'difficulty', 'description', 'visible'
             ),
         }),
         ("Supported Features", {
@@ -36,7 +36,7 @@ class GameAdmin(admin.ModelAdmin):
         }),
     )
     inlines = [
-        GameObjectiveInline,
+        GameRegulationInline,
         #GameVariantInline
     ]
 

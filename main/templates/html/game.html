@@ -6,10 +6,16 @@
 <h2>Status Legend</h2>
 {% include 'partial/legend.html' %}
 <h2>Support status</h2>
-{% include 'partial/game_summary.html' %}
-<h2>Objective</h2>
-{% for objective in objectives %}
-<h3>{{objective.title}}</h3>
-{{ objective.description }}
+<table class="table-container" bgcolor='#eeeeee' border='0' cellpadding='0' cellspacing='0' align='center' bgcolor='#000000' width='100%'><tr><td>
+{% include 'partial/game_support.html' %}
+</table>
+{% for regulation in regulations %}
+<h2>{{regulation.title}}</h2>
+{{ regulation.description|safe }}
 {% endfor %}
 {% endblock content_body %}
+{% block prefooter %}
+    <p class="left small-padding small-font">This page was last edited on: {{ game.last_modified }}</p>
+    <p class="left small-padding small-font">This page was published by: {{ game.published_by }}</p>
+    <p class="left small-padding small-font">Content is available under <a class="no-padding small-font" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike</a> unless otherwise noted.</p>
+{% endblock prefooter %}
