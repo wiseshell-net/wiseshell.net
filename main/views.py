@@ -50,7 +50,7 @@ class WikiList(TemplateView):
     template_name = "wiki.html"
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        games = Game.objects.all()
+        games = Game.objects.all().order_by('title')
         context["games"] = games
         return context
 
