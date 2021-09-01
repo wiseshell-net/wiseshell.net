@@ -131,58 +131,6 @@ a:hover {
     padding: 10px 0px;
 }
 
-
-/***** WIKI STUFF  *****/
-
-table.wiki,
-.wiki th,
-.wiki td {
-    border: 1px solid black;
-    border-collapse: collapse;
-    padding: 7px;
-    text-align: center;
-}
-
-.wiki th,
-.wiki .gray {
-    background: #eaecf0;
-}
-
-.wiki .partial {
-    background: #ffcfa5;
-}
-
-.partial {
-    color: #ff8c00;
-}
-
-.wiki .unavailable {
-    background: #e1e1e1;
-}
-
-.unavailable {
-    color: #000000;
-}
-
-.wiki .yes {
-    background: #cfffbf;
-}
-
-.yes {
-    color: #008000;
-}
-
-.wiki .no {
-    background: #ffbfbf;
-}
-
-.no {
-    color: #8b0000;
-}
-
-
-/*********************/
-
 .gray {
     border-bottom: 1px solid #d3d3d3;
 }
@@ -454,12 +402,95 @@ or follow the color palette of the web page.
 }
 
 
-/*@media(max-width:380px) {
-    #header {
-        height: 190px;
-    }
-    #slogan {
-        top: 135px;
-        left: 20px;
-    }
-}*/
+/***** WIKI STUFF  *****/
+
+.wiki {
+    width: 100%;
+}
+
+table.wiki,
+.wiki th,
+.wiki td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 7px;
+    text-align: center;
+}
+
+.wiki th,
+.wiki .gray {
+    background: #eaecf0;
+}
+
+.wiki .partial {
+    background: #ffcfa5;
+}
+
+.partial {
+    color: #ff8c00;
+}
+
+.wiki .unavailable {
+    background: #e1e1e1;
+}
+
+.unavailable {
+    color: #000000;
+}
+
+.wiki .yes {
+    background: #cfffbf;
+}
+
+.yes {
+    color: #008000;
+}
+
+.wiki .no {
+    background: #ffbfbf;
+}
+
+.no {
+    color: #8b0000;
+}
+
+.wiki-game-table {
+    padding: 7px 0px;
+}
+
+.wiki-game-table>p:first-child {
+    padding: 0;
+}
+
+.wiki-game-table>ul:first-child {
+    padding: 0px 15px;
+}
+
+.wiki-game-table tr:first-child {
+    background: #eaecf0;
+}
+
+.wiki-game-table tr:nth-child(odd) {
+    background: #eaecf0;
+}
+
+.wiki-game-table tr:nth-child(even) {
+    background: #ffffff;
+}
+
+.wiki-game-table td {
+    border: 1px solid #a2a9b1;
+    vertical-align: middle;
+    padding: 5px;
+}
+
+.wiki-game-table td:first {
+    padding: 0px;
+}
+
+.wiki-game-table table {
+    border-collapse: collapse;
+}
+
+
+/*********************/

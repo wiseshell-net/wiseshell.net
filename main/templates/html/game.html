@@ -8,39 +8,6 @@ Note: In Dillo and older browsers, wiki CSS stylesheet IS applied.
 {% block css %}{% endblock css %}
 {% block extracss %}<link rel="stylesheet" type="text/css" href="{% static 'css/wiki.css' %}" title="Wiki Stylesheet">{% endblock extracss %}
 {% endcomment %}
-{% block style %}
-
-.wiki-game-table {
-    padding: 7px 0px;
-}
-
-.wiki-game-table tr:first-child {
-    background: #eaecf0;
-}
-
-.wiki-game-table tr:nth-child(odd) {
-    background: #eaecf0;
-}
-
-.wiki-game-table tr:nth-child(even) {
-    background: #ffffff;
-}
-
-.wiki-game-table td {
-    border: 1px solid #a2a9b1;
-    vertical-align: middle;
-    padding: 5px;
-}
-
-.wiki-game-table td:first-child {
-    padding: 0px;
-}
-
-.wiki-game-table table {
-    border-collapse: collapse;
-}
-
-{% endblock style %}
 {% block active_wiki %}<a class="active" href="{% url 'wiki' %}">Wiki</a>{% endblock active_wiki %}
 {% block content_title %}{{ game.title|escape }}{% endblock content_title %}
 {% block content_body %}

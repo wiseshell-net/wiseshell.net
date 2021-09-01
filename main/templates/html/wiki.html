@@ -1,11 +1,14 @@
 {% extends 'base.html' %} {% load i18n %} {% load static %}
-{% block extracss %}<link rel="stylesheet" type="text/css" href="{% static 'css/wiki.css' %}" title="Wiki Stylesheet">{% endblock extracss %}
+{# {% block extracss %}<link rel="stylesheet" type="text/css" href="{% static 'css/wiki.css' %}" title="Wiki Stylesheet">{% endblock extracss %} #}
 {% block active_wiki %}<a class="active" href="{% url 'wiki' %}">Wiki</a>{% endblock active_wiki %}
 {% block content_title %}Wiki{% endblock content_title %}
 {% block content_body %}
 <p>Small description of the wiki.</p>
 {% lorem 4 p random %}
 <h2>Status Legend</h2>
+{# LEGEND GOES HERE #}
+{% include 'partial/legend.html' %}
+<h2>Supported Games</h2>
 {% comment %}
 <!-- It doesn't see well in Dillo (small screen). overflow is not supported. -->
 <div style="overflow-x:auto;">
@@ -24,7 +27,7 @@
             {% for game in games %}
             <!-- .wiki td:nth-child(even) is not supported in Dillo -->
             <tr {% if forloop.counter|divisibleby:2 %} class="gray" {% endif %}>
-                <td class="center">{{ game.title|escape }}</td>
+                <td class="center"><p class="redlinks bold"><a href="{% url 'info_game' game.id game.title|escape %}">{{game.title|escape}}</a></p></td>
                 <td class="center {% if game.documentation == "Y" %} yes {% else %}{% if game.documentation == "N" %} no {% else %}{% if game.documentation == "P" %} partial {% else %} unavailable {% endif %}{% endif %}{% endif %}">{{ game.documentation|escape }}</td>
                 <td class="center {% if game.supported_rules == "Y" %} yes {% else %}{% if game.supported_rules == "N" %} no {% else %}{% if game.supported_rules == "P" %} partial {% else %} unavailable {% endif %}{% endif %}{% endif %}">{{ game.supported_rules|escape }}</td>
                 <td class="center {% if game.single_player == "Y" %} yes {% else %}{% if game.single_player == "N" %} no {% else %}{% if game.single_player == "P" %} partial {% else %} unavailable {% endif %}{% endif %}{% endif %}">{{ game.single_player|escape }}</td>
@@ -36,10 +39,6 @@
     </table>
 </div>
 {% endcomment %}
-
-{# LEGEND GOES HERE #}
-{% include 'partial/legend.html' %}
-<h2>Supported Games</h2>
 {% for game in games %}
 <table class="table-container" bgcolor='#eeeeee' border='0' cellpadding='0' cellspacing='0' align='center' bgcolor='#000000' width='100%'><tr><td>
     <table border='0' cellpadding='5' cellspacing='1' width='100%'>

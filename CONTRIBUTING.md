@@ -1,5 +1,8 @@
 ## Adding / Modifying a Game in Django Administration
 
+If you are copy-pasting the wiki information from somewhere, please refer the sources by using [NUMBER] in the game description.
+Also, make sure to select *Clean Format* button before submitting the text.
+
 ### Notes Description
 
 <p>Separate your explanation in paragraphs if needed.</p>
