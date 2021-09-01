@@ -9,17 +9,37 @@ Note: In Dillo and older browsers, wiki CSS stylesheet IS applied.
 {% block extracss %}<link rel="stylesheet" type="text/css" href="{% static 'css/wiki.css' %}" title="Wiki Stylesheet">{% endblock extracss %}
 {% endcomment %}
 {% block style %}
-td {
-    font: 16px 'Tahoma', sans-serif;
+
+.wiki-game-table {
+    padding: 7px 0px;
 }
 
-tr:nth-child(even) {
+.wiki-game-table tr:first-child {
     background: #eaecf0;
 }
 
-tr:nth-child(odd) {
+.wiki-game-table tr:nth-child(odd) {
+    background: #eaecf0;
+}
+
+.wiki-game-table tr:nth-child(even) {
     background: #ffffff;
 }
+
+.wiki-game-table td {
+    border: 1px solid #a2a9b1;
+    vertical-align: middle;
+    padding: 5px;
+}
+
+.wiki-game-table td:first-child {
+    padding: 0px;
+}
+
+.wiki-game-table table {
+    border-collapse: collapse;
+}
+
 {% endblock style %}
 {% block active_wiki %}<a class="active" href="{% url 'wiki' %}">Wiki</a>{% endblock active_wiki %}
 {% block content_title %}{{ game.title|escape }}{% endblock content_title %}
@@ -33,7 +53,9 @@ tr:nth-child(odd) {
 </table>
 {% for regulation in regulations %}
 <h2>{{regulation.title}}</h2>
-{{ regulation.description|safe }}
+<div class="wiki-game-table">
+{{ regulation.description|safe}}
+</div>
 {% endfor %}
 {% endblock content_body %}
 {% block prefooter %}

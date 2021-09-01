@@ -8,7 +8,7 @@ from tinymce.models import HTMLField
 
 # Image will go into main board
 class Game(models.Model):
-    NOTES_DESCRIPTION = "Separate your explanation in paragraphs if needed."
+    NOTES_DESCRIPTION = "Separate your explanation in paragraphs if needed. Tables are not allowed here at the moment."
     DIFFICULTY_CHOICES = (
         ('Low', 'Low'),
         ('Medium', 'Medium'),
@@ -39,7 +39,7 @@ class Game(models.Model):
         ('P', 'Partial (need explanation in notes)'),
         ('Unavailable', 'Unavailable')
     )
-    NOTES_FIELD = "<p>Please insert the explanation here. You can put bullets to clarify your explanation: </p><ul><li>This rule is not implemented</li><li>This feature needs to be polished</li></ul>"
+    NOTES_FIELD = "<p>Please insert the explanation here. You can put bullets to clarify your explanation: </p><ul><li>This rule is not implemented</li><li>This feature needs to be polished</li></ul><p><b>Note:</b> Tables are not allowed here.</p>"
     documentation = models.CharField(max_length=11, choices=SUPPORT_CHOICES)
     supported_rules = models.CharField(max_length=11, choices=SUPPORT_CHOICES)
     single_player = models.CharField(max_length=11, choices=SUPPORT_CHOICES)

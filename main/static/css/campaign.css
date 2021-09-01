@@ -59,13 +59,17 @@ h3 {
 }
 
 table {
-    width: 100% !important;
+    width: 100% !;
 }
 
 th {
     font-weight: bold;
     vertical-align: top;
     padding: 4px 0px;
+}
+
+td {
+    vertical-align: middle;
 }
 
 ul {
