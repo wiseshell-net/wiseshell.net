@@ -1,4 +1,4 @@
-<table class="padding" style="margin-top:10px;" border='0' cellspacing='0' cellpadding='5'><tr><td>
+<table class="padding" border='0' cellspacing='0' cellpadding='5'><tr><td>
 <ul>
     <li class="bold">Documentation: <span class="bold {% if game.documentation == "Y" %} yes {% else %}{% if game.documentation == "N" %} no {% else %}{% if game.documentation == "P" %} partial {% else %} unavailable {% endif %}{% endif %}{% endif %}">{{ game.documentation|escape }}</span></li>
     <li class="bold">Supported rules: <span class="bold {% if game.supported_rules == "Y" %} yes {% else %}{% if game.supported_rules == "N" %} no {% else %}{% if game.supported_rules == "P" %} partial {% else %} unavailable {% endif %}{% endif %}{% endif %}">{{ game.supported_rules|escape }}</span></li>

@@ -10,7 +10,8 @@
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <title>{% block title %}Cartes{% endblock title %}</title>
-            <link rel="stylesheet" type="text/css" href="{% static 'css/campaign.css' %}" title="Campaign Stylesheet">
+            {% block css %}<link rel="stylesheet" type="text/css" href="{% static 'css/campaign.css' %}" title="Campaign Stylesheet">{% endblock css %}
+            {% block extracss %}{% endblock extracss %}
         <!-- END HEAD -->
     {% endblock head %}
 </head>

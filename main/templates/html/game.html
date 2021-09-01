@@ -1,4 +1,12 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %}{% load static %}{% load i18n %}
+{% comment %}
+
+If we empty block css (that means unexistent campaign.css in page), the wiki CSS stylesheet will start a apply its own styles.
+Otherwise, none of them (of wiki.css) will be applied, even if it has !important mark.
+
+{% block css %}{% endblock css %}
+{% block extracss %}<link rel="stylesheet" type="text/css" href="{% static 'css/wiki.css' %}" title="Wiki Stylesheet">{% endblock extracss %}
+{% endcomment %}
 {% block active_wiki %}<a class="active" href="{% url 'wiki' %}">Wiki</a>{% endblock active_wiki %}
 {% block content_title %}{{ game.title|escape }}{% endblock content_title %}
 {% block content_body %}

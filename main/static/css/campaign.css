@@ -12,6 +12,7 @@
     border: 0;
     border: none;
     font: 16px 'Tahoma', sans-serif;
+    font-weight: inherit;
     color: #4B4B4B;
 }
 
@@ -68,7 +69,7 @@ th {
 }
 
 ul {
-    padding-left: 15px;
+    padding: 7px 15px;
     padding-bottom: 10px;
 }
 

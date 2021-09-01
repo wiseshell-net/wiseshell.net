@@ -1,4 +1,5 @@
 {% extends 'base.html' %} {% load i18n %} {% load static %}
+{% block extracss %}<link rel="stylesheet" type="text/css" href="{% static 'css/wiki.css' %}" title="Wiki Stylesheet">{% endblock extracss %}
 {% block active_wiki %}<a class="active" href="{% url 'wiki' %}">Wiki</a>{% endblock active_wiki %}
 {% block content_title %}Wiki{% endblock content_title %}
 {% block content_body %}
