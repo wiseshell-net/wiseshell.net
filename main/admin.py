@@ -8,7 +8,17 @@ class GameRegulationInline(admin.TabularInline):
     model = GameRegulation
     def get_game(self, obj):
         return obj.game.title
-
+    fieldsets = (
+        ("Game Regulations", {
+            "fields": (
+                'title', 'description', 'image', 'caption'
+            ),
+        }),
+    )
+    def get_form(self, request, obj=None, **kwargs):
+        form = super(GameRegulation, self).get_form(request, obj, **kwargs)
+        form.base_fields['description'].widget.attrs['style'] = 'width: 45em;'
+        return form
 
 """
 class GameVariantInline(admin.TabularInline):

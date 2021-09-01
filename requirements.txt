@@ -7,6 +7,5 @@ pyautogui==0.9.50
 django-debug-toolbar==2.2.1
 python-dotenv==0.13.0
 django-extensions==2.2.9
-django-jazzmin==2.2.7
 django-modeltranslation==0.15.2
 django-tinymce==3.2.0
