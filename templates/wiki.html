@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% set res = load_data(path=config.extra.path_language_resources ~ lang ~ ".toml") %}
+  <h1>{{ page.title }}</h1>
+  {{ page.content | safe }}
+
+  {% if page.extra.show_legend %}
+  <h2>{{ res.legend_title }}</h2>
+  <div class="panel">
+    <div class="panel-body">
+      <ul class="legend-list">
+        <li><span class="bold">Y</span> — {{ res.legend_yes }}: <span class="bold yes">Y</span></li>
+        <li><span class="bold">N</span> — {{ res.legend_no }}: <span class="bold no">N</span></li>
+        <li><span class="bold">P</span> — {{ res.legend_partial }}: <span class="bold partial">P</span></li>
+        <li><span class="bold">Unavailable</span> — {{ res.legend_unavailable }}: <span class="bold unavailable">Unavailable</span></li>
+      </ul>
+    </div>
+  </div>
+  <h2>{{ res.wiki_supported }}</h2>
+  <p>{{ res.wiki_empty }}</p>
+  {% endif %}
+{% endblock content %}

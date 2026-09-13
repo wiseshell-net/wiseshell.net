@@ -1,0 +1,45 @@
+# Global settings
+settings_locale = "ca"
+settings_date_locale = "ca_ES"
+settings_date_format = "%d %B %Y"
+
+# Navigation
+nav_home = "Inici"
+nav_blog = "Blog"
+nav_download = "Descarrega"
+nav_faq = "FAQ"
+nav_wiki = "Wiki"
+nav_source = "Codi"
+nav_donate = "Donacions"
+nav_archive = "Arxiu"
+
+# Footer / UI
+return_to_top = "Torna amunt"
+lang_label = "Idioma"
+site_name = "Cartes"
+
+# Badges alt text
+badge_anybrowser = "Contingut millorat — Usa qualsevol navegador"
+badge_nojs = "No cal JavaScript per usar aquest lloc"
+badge_opencontent = "Open Content"
+badge_html = "HTML vàlid"
+badge_css = "CSS vàlid"
+badge_webstandards = "Web Standards Now!"
+
+# Wiki legend
+legend_title = "Llegenda"
+legend_yes = "Sí, la funció està completament implementada"
+legend_no = "No, la funció no està implementada o no funciona"
+legend_partial = "Parcial, la funció no està completament implementada"
+legend_unavailable = "No disponible, el joc no té aquesta funció"
+wiki_empty = "Encara no hi ha jocs documentats a la wiki."
+wiki_supported = "Jocs suportats"
+
+# Download
+platforms_title = "Plataformes suportades"
+gpl_freedoms_intro = "Aquest joc és programari lliure sota els termes de la versió 3 de la"
+gpl_freedom_use = "Llibertat d’usar el programa com vulgueu."
+gpl_freedom_study = "Llibertat d’estudiar i modificar el codi font."
+gpl_freedom_backup = "Llibertat de fer còpies de seguretat."
+gpl_freedom_redistribute = "Llibertat de redistribuir-lo."
+gpl_legal = "La GPL és el mecanisme legal que us dóna aquestes llibertats. També us protegeix: qualsevol obra derivada basat en el programa també ha d’estar sota GPLv3."

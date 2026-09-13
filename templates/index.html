@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if section is defined %}
+    {{ section.content | safe }}
+    <p class="code">Wiseshell {{ now() | date(format="%Y") }}</p>
+  {% elif page is defined %}
+    <h1>{{ page.title }}</h1>
+    {{ page.content | safe }}
+  {% endif %}
+{% endblock content %}

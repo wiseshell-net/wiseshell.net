@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% set res = load_data(path=config.extra.path_language_resources ~ lang ~ ".toml") %}
+  <h1>{{ page.title }}</h1>
+  {{ page.content | safe }}
+
+  <h2>{{ res.platforms_title }}</h2>
+
+  <div class="panel">
+    <div class="panel-header">
+      <img src="{{ get_url(path='assets/img/platforms/Windows10.png') }}" alt="Windows" width="176" height="64">
+    </div>
+    <div class="panel-body">
+      <p>{{ res.gpl_freedoms_intro }} <a href="https://www.gnu.org/licenses/gpl.html">GPL</a>.</p>
+      <ul>
+        <li>{{ res.gpl_freedom_use }}</li>
+        <li>{{ res.gpl_freedom_study }}</li>
+        <li>{{ res.gpl_freedom_backup }}</li>
+        <li>{{ res.gpl_freedom_redistribute }}</li>
+      </ul>
+      <p>{{ res.gpl_legal }}</p>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-header">
+      <img src="{{ get_url(path='assets/img/platforms/Linux.png') }}" alt="Linux" width="176" height="64">
+    </div>
+    <div class="panel-body">
+      <p>{{ res.gpl_freedoms_intro }} <a href="https://www.gnu.org/licenses/gpl.html">GPL</a>.</p>
+      <ul>
+        <li>{{ res.gpl_freedom_use }}</li>
+        <li>{{ res.gpl_freedom_study }}</li>
+        <li>{{ res.gpl_freedom_backup }}</li>
+        <li>{{ res.gpl_freedom_redistribute }}</li>
+      </ul>
+      <p>{{ res.gpl_legal }}</p>
+    </div>
+  </div>
+{% endblock content %}

@@ -1,18 +1,50 @@
-Notes:<br/>
-Images picked from https://retroarch.org<br/>
-Color palette extracted from https://www.color-hex.com/color-palette/21486 and https://nhfournier.es<br/>
+# wiseshell.net
 
-Si he d'afegir una nova caracteristica als jocs de cartes, he de modificar-ho a models.py, a views.py (WikiList) i a wiki.html (la taula).
+Lloc estàtic per wiseshell.net generat amb [Zola](https://www.getzola.org/).
+Té un .github/workflows.yml que executa el build automàtic del site
+cada vegada que es fa merge o push en la branca master.
 
+## Requisits
 
-## Local Setup
-` git clone git@github.com:wiseshell-net/wiseshell.net.git`<br/>
-`cd wiseshell.net`<br/>
-`python3 -m venv venv`<br/>
-`source venv/bin/activate`<br/>
-`pip3 install -r requirements.txt`<br/>
-`python3 manage.py makemigrations`<br/>
-`python3 manage.py migrate`<br/>
-`python3 manage.py runserver`<br/>
+- [Zola v0.23.5](https://github.com/getzola/zola/releases/tag/v0.23.5), o Docker
 
-Obre el navegador a http://127.0.0.1:8000 per accedir a la web.
+## Desenvolupament local
+
+```bash
+zola serve
+```
+
+Obre http://127.0.0.1:1111
+
+```bash
+zola build
+```
+
+Genera el lloc a `docs/`.
+
+## Docker
+
+```bash
+docker compose up --build
+```
+
+Preview a http://localhost:1111
+
+```bash
+docker compose run --rm zola zola build
+```
+
+Per forçar arquitectura: `PLATFORM=linux/arm64 docker compose build`.
+
+## Traduccions
+
+Les traduccions es troben en format clau-valor dins i18n.
+
+## GitHub Pages
+
+wiseshell.net s'executa amb GitHub Pages dins `/docs`.
+
+## Notes
+
+* Imatges basades en https://retroarch.org
+* Paleta de https://www.color-hex.com/color-palette/21486 i https://nhfournier.es

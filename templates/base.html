@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+  {% set res = load_data(path=config.extra.path_language_resources ~ lang ~ ".toml") %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="{{ config.extra.generator | default(value='Zola') }}">
+  <title>{% block title %}{% if page is defined %}{{ page.title }} — {% elif section is defined and section.title %}{{ section.title }} — {% endif %}{{ config.title }}{% endblock title %}</title>
+  <link rel="stylesheet" href="{{ get_url(path='css/campaign.css') }}" title="Campaign Stylesheet">
+  {% block extracss %}{% endblock extracss %}
+</head>
+<body>
+  {% set res = load_data(path=config.extra.path_language_resources ~ lang ~ ".toml") %}
+  {% if page is defined %}
+    {% set slug = page.slug %}
+  {% else %}
+    {% set slug = "" %}
+  {% endif %}
+  <div id="global">
+    <a id="top"></a>
+    <header id="header">
+      <div id="logo">
+        <a href="{{ get_url(path='/', lang=lang) }}">
+          <img src="{{ get_url(path='assets/img/logo/WCartes2_72x72.png') }}" alt="{{ res.site_name }}" width="72" height="72">
+        </a>
+      </div>
+    </header>
+
+    <nav id="navmenu" class="navigation whitelinks" aria-label="{{ res.site_name }}">
+      <ul class="nav-list">
+        <li><a href="{{ get_url(path='/', lang=lang) }}"{% if current_path == "/" or current_path == "/" ~ lang ~ "/" %} class="active"{% endif %}>{{ res.nav_home }}</a></li>
+        <li><a href="{{ get_url(path='blog/', lang=lang) }}"{% if slug == "blog" %} class="active"{% endif %}>{{ res.nav_blog }}</a></li>
+        <li><a href="{{ get_url(path='download/', lang=lang) }}"{% if slug == "download" %} class="active"{% endif %}>{{ res.nav_download }}</a></li>
+        <li><a href="{{ get_url(path='faq/', lang=lang) }}"{% if slug == "faq" %} class="active"{% endif %}>{{ res.nav_faq }}</a></li>
+        <li><a href="{{ get_url(path='wiki/', lang=lang) }}"{% if slug == "wiki" %} class="active"{% endif %}>{{ res.nav_wiki }}</a></li>
+        <li><a href="{{ get_url(path='source/', lang=lang) }}"{% if slug == "source" %} class="active"{% endif %}>{{ res.nav_source }}</a></li>
+        <li>
+          <a href="{{ get_url(path='donate/', lang=lang) }}"{% if slug == "donate" %} class="active"{% endif %}>{{ res.nav_donate }}</a>
+          <img class="heart-icon" src="{{ get_url(path='assets/img/heart.gif') }}" alt="" width="16" height="16">
+        </li>
+      </ul>
+    </nav>
+
+    <nav id="navlang" class="navigation redlinks" aria-label="{{ res.lang_label }}">
+      <ul class="lang-list">
+        {% if page is defined and slug %}
+          {% set lang_path = slug ~ "/" %}
+        {% else %}
+          {% set lang_path = "/" %}
+        {% endif %}
+        <li>
+          {% if lang == "ca" %}
+            <a class="active" href="{{ current_url | safe }}">Català</a>
+          {% else %}
+            <a href="{{ get_url(path=lang_path, lang='ca') }}">Català</a>
+          {% endif %}
+        </li>
+        <li>
+          {% if lang == "en" %}
+            <a class="active" href="{{ current_url | safe }}">English</a>
+          {% else %}
+            <a href="{{ get_url(path=lang_path, lang='en') }}">English</a>
+          {% endif %}
+        </li>
+        <li>
+          {% if lang == "es" %}
+            <a class="active" href="{{ current_url | safe }}">Español</a>
+          {% else %}
+            <a href="{{ get_url(path=lang_path, lang='es') }}">Español</a>
+          {% endif %}
+        </li>
+      </ul>
+    </nav>
+
+    <main id="main">
+      <div class="content">
+        {% block content %}
+          {% if page is defined %}
+            <h1>{{ page.title }}</h1>
+            {{ page.content | safe }}
+          {% elif section is defined %}
+            {{ section.content | safe }}
+          {% endif %}
+        {% endblock content %}
+      </div>
+    </main>
+
+    <footer id="navfooter" class="navigation redfooterlinks center">
+      <a class="bold" href="#top">{{ res.return_to_top }}</a>
+    </footer>
+
+    <div class="badges redlinks">
+      <a href="https://anybrowser.org/campaign/index.html">
+        <img src="{{ get_url(path='assets/img/button_enhanced.gif') }}" alt="{{ res.badge_anybrowser }}" width="96" height="32">
+      </a>
+      <span>
+        <img src="{{ get_url(path='assets/img/button_nojs.gif') }}" alt="{{ res.badge_nojs }}" width="96" height="32">
+      </span>
+      <a href="http://www.opencontent.org/">
+        <img src="{{ get_url(path='assets/img/button_takeone.gif') }}" alt="{{ res.badge_opencontent }}" width="85" height="33">
+      </a>
+      <a href="https://validator.w3.org/">
+        <img src="{{ get_url(path='assets/img/valid-xhtml10.png') }}" alt="{{ res.badge_html }}" width="88" height="31">
+      </a>
+      <a href="https://jigsaw.w3.org/css-validator/">
+        <img src="{{ get_url(path='assets/img/vcss.gif') }}" alt="{{ res.badge_css }}" width="88" height="31">
+      </a>
+      <a href="http://www.webstandards.org/">
+        <img src="{{ get_url(path='assets/img/wspnow.gif') }}" alt="{{ res.badge_webstandards }}" width="90" height="35">
+      </a>
+    </div>
+  </div>
+</body>
+</html>

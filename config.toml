@@ -1,0 +1,27 @@
+# The URL the site will be built for
+base_url = "https://wiseshell-net.github.io/wiseshell.net"
+
+title = "Cartes"
+
+# Catalan is the default language
+default_language = "ca"
+
+compile_sass = false
+build_search_index = false
+generate_feeds = false
+
+# GitHub Pages serves from /docs
+output_dir = "docs"
+
+[markdown]
+smart_punctuation = false
+
+[languages.es]
+title = "Cartes"
+
+[languages.en]
+title = "Cartes"
+
+[extra]
+path_language_resources = "i18n/"
+generator = "Zola v0.23.5"

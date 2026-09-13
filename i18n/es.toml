@@ -1,0 +1,45 @@
+# Global settings
+settings_locale = "es"
+settings_date_locale = "es_ES"
+settings_date_format = "%d %B %Y"
+
+# Navigation
+nav_home = "Inicio"
+nav_blog = "Blog"
+nav_download = "Descarga"
+nav_faq = "FAQ"
+nav_wiki = "Wiki"
+nav_source = "Código"
+nav_donate = "Donaciones"
+nav_archive = "Archivo"
+
+# Footer / UI
+return_to_top = "Volver arriba"
+lang_label = "Idioma"
+site_name = "Cartes"
+
+# Badges alt text
+badge_anybrowser = "Contenido mejorado — Usa cualquier navegador"
+badge_nojs = "No se necesita JavaScript para usar este sitio"
+badge_opencontent = "Open Content"
+badge_html = "HTML válido"
+badge_css = "CSS válido"
+badge_webstandards = "Web Standards Now!"
+
+# Wiki legend
+legend_title = "Leyenda"
+legend_yes = "Sí, la función está completamente implementada"
+legend_no = "No, la función no está implementada o no funciona"
+legend_partial = "Parcial, la función no está completamente implementada"
+legend_unavailable = "No disponible, el juego no tiene esta función"
+wiki_empty = "Todavía no hay juegos documentados en la wiki."
+wiki_supported = "Juegos soportados"
+
+# Download
+platforms_title = "Plataformas soportadas"
+gpl_freedoms_intro = "Este juego es software libre bajo los términos de la versión 3 de la"
+gpl_freedom_use = "Libertad de usar el programa como quieras."
+gpl_freedom_study = "Libertad de estudiar y modificar el código fuente."
+gpl_freedom_backup = "Libertad de hacer copias de seguridad."
+gpl_freedom_redistribute = "Libertad de redistribuirlo."
+gpl_legal = "La GPL es el mecanismo legal que te da estas libertades. También te protege: cualquier obra derivada basada en el programa también debe estar bajo GPLv3."
