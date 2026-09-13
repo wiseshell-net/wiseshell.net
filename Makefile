@@ -34,6 +34,7 @@ serve: ## Live preview (default http://127.0.0.1:1111)
 
 build: ## Build static site into docs/
 	$(ZOLA) build
+	cp CNAME $(OUTPUT_DIR)/CNAME
 
 check: ## Check site for errors / broken links
 	$(ZOLA) check
@@ -66,6 +67,7 @@ docker-serve: ## Serve via Docker (foreground, port 1111)
 
 docker-build-site: ## Build site into docs/ via Docker
 	PLATFORM=$(PLATFORM) $(COMPOSE) run --rm zola zola build
+	cp CNAME $(OUTPUT_DIR)/CNAME
 
 docker-check: ## Run zola check via Docker
 	PLATFORM=$(PLATFORM) $(COMPOSE) run --rm zola zola check
