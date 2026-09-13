@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://wiseshell-net.github.io/wiseshell.net"
+base_url = "//wiseshell.net"
 
 title = "Cartes"
 
