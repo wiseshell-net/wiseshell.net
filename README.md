@@ -20,7 +20,7 @@ Obre http://127.0.0.1:1111
 make build
 ```
 
-Genera el lloc a `docs/` i hi copia el `CNAME` de l’arrel.
+Genera el lloc a `public/` i hi copia el `CNAME` de l’arrel.
 
 ## Docker
 
@@ -34,7 +34,7 @@ Preview a http://localhost:1111
 make docker-build-site
 ```
 
-També genera `docs/` amb el `CNAME` copiat.
+També genera `public/` amb el `CNAME` copiat.
 
 Per forçar arquitectura: `PLATFORM=linux/arm64 docker compose build`.
 
@@ -44,7 +44,8 @@ Les traduccions es troben en format clau-valor dins i18n.
 
 ## GitHub Pages
 
-wiseshell.net es desplega amb GitHub Pages via Actions (artefacte de `docs/`).
+wiseshell.net es desplega amb GitHub Pages via **GitHub Actions** (artefacte de `public/`).
+A Settings → Pages, la font ha de ser «GitHub Actions», no «Deploy from a branch».
 El fitxer `CNAME` a l’arrel defineix el domini personalitzat.
 
 ## Notes

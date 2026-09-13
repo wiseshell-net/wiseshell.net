@@ -26,4 +26,5 @@ __pycache__/
 *.log
 
 ### Zola ###
-# Keep docs/ committed for GitHub Pages
+public/
+docs/

@@ -13,7 +13,7 @@ Aquest lloc és estàtic (Zola). No hi ha admin ni base de dades.
 
 1. Edita Markdown / TOML / CSS
 2. `zola serve` o `docker compose up --build`
-3. `make build` per generar `docs/` localment; el merge a `master` desplega via Actions
+3. `make build` per generar `public/` localment; el merge a `master` desplega via Actions
 
 ## Wiki
 

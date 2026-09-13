@@ -10,8 +10,7 @@ compile_sass = false
 build_search_index = false
 generate_feeds = false
 
-# GitHub Pages serves from /docs
-output_dir = "docs"
+output_dir = "public"
 
 [markdown]
 smart_punctuation = false

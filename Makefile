@@ -4,7 +4,7 @@ ZOLA            ?= zola
 ZOLA_VERSION    ?= 0.23.5
 PORT            ?= 1111
 INTERFACE       ?= 127.0.0.1
-OUTPUT_DIR      ?= docs
+OUTPUT_DIR      ?= public
 PLATFORM        ?= linux/amd64
 COMPOSE         ?= docker compose
 DOCKER_IMAGE    ?= wiseshell-zola
@@ -32,14 +32,14 @@ version: ## Print Zola version (host)
 serve: ## Live preview (default http://127.0.0.1:1111)
 	$(ZOLA) serve --interface $(INTERFACE) --port $(PORT)
 
-build: ## Build static site into docs/
+build: ## Build static site into public/
 	$(ZOLA) build
 	cp CNAME $(OUTPUT_DIR)/CNAME
 
 check: ## Check site for errors / broken links
 	$(ZOLA) check
 
-clean: ## Remove build output (docs/)
+clean: ## Remove build output (public/)
 	rm -rf $(OUTPUT_DIR)
 
 rebuild: clean build ## Clean then build
@@ -65,7 +65,7 @@ docker-serve: ## Serve via Docker (foreground, port 1111)
 	PLATFORM=$(PLATFORM) $(COMPOSE) run --rm --service-ports zola \
 		zola serve --interface 0.0.0.0 --port $(PORT)
 
-docker-build-site: ## Build site into docs/ via Docker
+docker-build-site: ## Build site into public/ via Docker
 	PLATFORM=$(PLATFORM) $(COMPOSE) run --rm zola zola build
 	cp CNAME $(OUTPUT_DIR)/CNAME
 
